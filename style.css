@@ -1,0 +1,215 @@
+:root {
+    --bg: #b45d16;
+    --card: #fff8f8;
+    --text: #333;
+    --accent: #0072ff;
+    --button: #0072ff;
+    --button-hover: #005dc1;
+  }
+  
+  body.dark-mode {
+    --bg: #1c1c1e;
+    --card: #2c2c2e;
+    --text: #f2f2f2;
+    --accent: #66b0ff;
+    --button: #3498db;
+    --button-hover: #2980b9;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .theme-toggle {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    font-weight: bold;
+  }
+  
+  .calculate {
+    max-width: 500px;
+    margin: 40px auto;
+    background-color: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: var(--accent);
+    margin-bottom: 25px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    font-size: 16px;
+    background: none;
+    color: var(--text);
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: var(--button);
+  }
+  
+  .voice-input {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .voice-input input {
+    flex: 1;
+  }
+  
+  /* .voice-input button {
+    padding: 10px 14px;
+    font-size: 14px;
+    background-color: var(--button);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    white-space: nowrap;
+  } */
+  
+  .suggestions {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .suggestions button {
+    flex: 1;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .suggestions button:hover {
+    background-color: var(--accent);
+    color: #fff;
+  }
+  
+  button[type="button"] {
+    padding: 12px;
+    background-color: var(--button);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  button:hover {
+    background-color: var(--button-hover);
+  }
+  
+  .results {
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 2px dashed #ccc;
+    display: none;
+  }
+  
+  .results p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .results span {
+    font-weight: bold;
+    color: var(--accent);
+  }
+  
+  @media (max-width: 600px) {
+    .calculate {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 24px;
+    }
+  
+    /* .voice-input {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .voice-input button {
+      margin-top: 5px;
+    } */
+  }
+  
+  /* Dark Mode Toggle Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--accent);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
