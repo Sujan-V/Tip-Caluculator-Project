@@ -56,5 +56,7 @@ Web Speech API (for voice input)
 📦 Setup Locally
 
 git clone https://github.com/your-username/tip-calculator.git
+
 cd tip-calculator
+
 open index.html  # or open in your preferred browser
