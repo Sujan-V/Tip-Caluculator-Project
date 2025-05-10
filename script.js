@@ -30,23 +30,23 @@ function setTip(value) {
   });
   
   // Voice Input
-  const voiceBtn = document.getElementById("voice-btn");
-  const billInput = document.getElementById("billAmount");
+  // const voiceBtn = document.getElementById("voice-btn");
+  // const billInput = document.getElementById("billAmount");
   
-  if ('webkitSpeechRecognition' in window) {
-    const recognition = new webkitSpeechRecognition();
-    recognition.lang = "en-US";
+  // if ('webkitSpeechRecognition' in window) {
+  //   const recognition = new webkitSpeechRecognition();
+  //   recognition.lang = "en-US";
   
-    voiceBtn.addEventListener("click", () => {
-      recognition.start();
-    });
+  //   voiceBtn.addEventListener("click", () => {
+  //     recognition.start();
+  //   });
   
-    recognition.onresult = function (event) {
-      const transcript = event.results[0][0].transcript.replace(/[^0-9.]/g, '');
-      billInput.value = transcript;
-    };
-  } else {
-    voiceBtn.disabled = true;
-    voiceBtn.title = "Voice recognition not supported in this browser";
-  }
+  //   recognition.onresult = function (event) {
+  //     const transcript = event.results[0][0].transcript.replace(/[^0-9.]/g, '');
+  //     billInput.value = transcript;
+  //   };
+  // } else {
+  //   voiceBtn.disabled = true;
+  //   voiceBtn.title = "Voice recognition not supported in this browser";
+  // }
   
